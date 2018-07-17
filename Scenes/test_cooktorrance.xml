@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Scene Description in XML -->
+<scene desc="Cornell Box"
+	    author="Adrian Jarabo">
+	<!-- Background Color and Ambient Light Property -->
+	<background>
+		<color red="0.0" green="0.0" blue="0.0"/>
+		<ambientLight red="0.0" green="0.0" blue="0.0"/>
+	</background>
+
+		
+	<!-- Camera Description -->
+	<camera fieldOfView="45.0" nearClip="0.1" farClip="100.0">
+		<position x=".0" y="1.0" z="3.0"/>
+		<target x="0.0" y="1.0" z="0.0"/>
+		<up x="0.0" y="1.0" z="0.0"/>
+	</camera>
+
+	<!-- Light Sources Collection -->
+	<light_list>
+		<!-- Light Description, Color & Position -->
+		<light>
+			<color red="1" green="1" blue="1"/>
+			<position x="0.0" y="1.9" z="0.0"/>
+			<attenuation constant="0" linear="0.0" quadratic="1.00"/>
+		</light>
+	</light_list>
+
+	<!-- Material Type Collection -->
+	<material_list>
+		
+		<material name="Red">
+			<texture filename=""/>
+			<diffuse red="1.0" green="0.01" blue="0.01"/>
+			<specular red="0" green="0.0" blue="0.0" shininess="0.0"/>
+			<transparent red="0.0" green="0.0" blue="0.0"/>
+			<reflective red="0.0" green="0.0" blue="0.0"/>
+			<refraction_index red="0.0" green="0.0" blue="0.0"/>
+			<alpha value="0.5"/>
+			<fo value="0.5"/>
+			<bias reflection="0.001" refraction="0.001"/>
+		</material>
+		
+		<material name="Green">
+			<texture filename=""/>
+			<diffuse red="0.1" green="0.8" blue="0.01"/>
+			<specular red="0" green="0.3" blue="0.0" shininess="0.0"/>
+			<transparent red="0.0" green="0.0" blue="0.0"/>
+			<reflective red="0.0" green="0.0" blue="0.0"/>
+			<refraction_index red="0.0" green="0.0" blue="0.0"/>
+			<alpha value="0.5"/>
+			<fo value="0.5"/>
+			<bias reflection="0.001" refraction="0.001"/>
+		</material>
+
+		<material name="White">
+		  <texture filename=""/>
+				<diffuse red="0.8" green="0.8" blue="0.8"/>
+				<specular red="0" green="0.0" blue="0.0" shininess="0.0"/>
+			<transparent red="0.0" green="0.0" blue="0.0"/>
+				<reflective red="0.0" green="0.0" blue="0.0"/>
+				<refraction_index red="0.0" green="0.0" blue="0.0"/>
+				<alpha value="0.5"/>
+				<fo value="0.5"/>
+		  <bias reflection="0.001" refraction="0.001"/>
+		</material>
+
+		
+		<material name="WhiteSpecularModerate">
+		  <texture filename=""/>
+				<diffuse red="0.8" green="0.8" blue="0.8"/>
+				<specular red="0" green="0.0" blue="0.0" shininess="0.0"/>
+			<transparent red="0.0" green="0.0" blue="0.0"/>
+				<reflective red="0.01" green="0.01" blue="0.01"/>
+				<refraction_index red="0.0" green="0.0" blue="0.0"/>
+				<alpha value="1"/>
+				<fo value="0.5"/>
+		  <bias reflection="0.001" refraction="0.001"/>
+		</material>
+		
+		<material name="texture">
+			  <texture filename="Assets/Textures/ejemplo.jpg"/>
+			  <diffuse red="1.0" green="1.0" blue="1.0"/>
+			<specular red="0" green="0.0" blue="0.0" shininess="0.0"/>
+			<transparent red="0.0" green="0.0" blue="0.0"/>
+			  <reflective red="0.01" green="0.01" blue="0.01"/>
+			  <refraction_index red="0.0" green="0.0" blue="0.0"/>
+			  <alpha value="0.0"/>
+			  <fo value="0.0"/>
+			  <bias reflection="0.001" refraction="0.001"/>
+		</material>
+		
+    <material name="Glossy">
+      <texture filename=""/>
+      <diffuse red=".2" green="0.2" blue="0.2"/>
+      <specular red="0.8" green="0.8" blue="0.8" shininess="100.0"/>
+      <transparent red="0.0" green="0.0" blue="0.0"/>
+      <reflective red="0.0" green="0.0" blue="0.0"/>
+      <refraction_index red="0.0" green="0.0" blue="0.0"/>
+      <alpha value="0.01"/>
+      <fo value="0.9"/>
+      <bias reflection="0.001" refraction="0.001"/>
+    </material>
+		
+		
+    <material name="Mirror">
+      <texture filename=""/>
+      <diffuse red=".2" green="0.2" blue="0.2"/>
+      <specular red="1" green="1" blue="1" shininess="100.0"/>
+      <transparent red="0.0" green="0.0" blue="0.0"/>
+      <reflective red="1.0" green="1.0" blue="1.0"/>
+      <refraction_index red="0.0" green="0.0" blue="0.0"/>
+      <alpha value="0.01"/>
+      <fo value="0.9"/>
+      <bias reflection="0.001" refraction="0.001"/>
+    </material>
+	
+	
+	
+    <material name="TransparentGlass">
+      <texture filename=""/>
+      <diffuse red="0.0" green="0.0" blue="0.0"/>
+      <specular red="0" green="0" blue="0" shininess="5.0"/>
+      <transparent red="0.9" green="0.9" blue="0.9"/>
+      <reflective red=".1" green="0.1" blue="0.1"/>
+      <refraction_index red="1.517" green="1.517" blue="1.517"/>
+      <alpha value="0.00001"/>
+      <fo value="0.9"/>
+      <bias reflection="0.001" refraction="0.001"/>
+    </material>
+	</material_list>
+
+	<!-- List of Scene Objects -->
+	<object_list>
+		<!-- Sphere Object -->
+		<sphere name="WallLeft" material="Red" radius="10000.0">
+			<scale x="1.0" y="1.0" z="1.0"/>
+			<rotation x="0.0" y="0.0" z="0.0"/>
+			<position x="0.0" y="0.0" z="0.0"/>
+
+			<center x="-10001.5" y="1.0" z="0.0"/>
+		</sphere>
+
+		<sphere name="WallRight" material="Green" radius="10000.0">
+			<scale x="1.0" y="1.0" z="1.0"/>
+			<rotation x="0.0" y="0.0" z="0.0"/>
+			<position x="0.0" y="0.0" z="0.0"/>
+
+			<center x="10001.5" y="1.0" z="0.0"/>
+		</sphere>
+
+		<sphere name="WallFront" material="White" radius="10000.0">
+			<scale x="1.0" y="1.0" z="1.0"/>
+			<rotation x="0.0" y="0.0" z="0.0"/>
+			<position x="0.0" y="0.0" z="0.0"/>
+
+			<center x="0" y="1.0" z="-10001.5"/>
+		</sphere>
+
+		
+		<sphere name="Floor" material="White" radius="10000.0">
+			<scale x="1.0" y="1.0" z="1.0"/>
+			<rotation x="0.0" y="0.0" z="0.0"/>
+			<position x="0.0" y="0.0" z="0.0"/>
+
+			<center x="0" y="-10000" z="0"/>
+		</sphere>
+		
+		<sphere name="Ceil" material="White" radius="10000.0">
+			<scale x="1.0" y="1.0" z="1.0"/>
+			<rotation x="0.0" y="0.0" z="0.0"/>
+			<position x="0.0" y="0.0" z="0.0"/>
+
+			<center x="0" y="10002" z="0"/>
+		</sphere>
+		
+		<sphere name="Sphere1" material="Mirror" radius="0.3">
+			<scale x="1.0" y="1.0" z="1.0"/>
+			<rotation x="0.0" y="0.0" z="0.0"/>
+			<position x="0.0" y="0.0" z="0.0"/>
+			<center x="0.5" y="0.3" z="0.1"/>
+		</sphere>
+
+		<sphere name="Sphere1" material="Glossy" radius="0.3">
+			<scale x="1.0" y="1.0" z="1.0"/>
+			<rotation x="0.0" y="0.0" z="0.0"/>
+			<position x="0.0" y="0.0" z="0.0"/>
+			<center x="-0.5" y="0.3" z="-0.1"/>
+		</sphere>
+
+		
+		
+	</object_list>
+	
+<!-- End of Scene -->
+</scene>

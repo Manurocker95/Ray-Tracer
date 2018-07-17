@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Code">
+      <UniqueIdentifier>{a2f661d7-59f3-4d97-9df2-c9953fb67095}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Header">
+      <UniqueIdentifier>{d50b8f9c-7fae-4c6e-bc2e-4feabf5e1dda}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Source">
+      <UniqueIdentifier>{ad13a4c0-55b9-434d-a1cf-a723d3947eae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scenes">
+      <UniqueIdentifier>{c11fc645-1a27-4e94-9e86-86a53df179eb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Code\3ds.cpp">
+      <Filter>Code\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\Pic.cpp">
+      <Filter>Code\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\RayTrace.cpp">
+      <Filter>Code\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\Scene.cpp">
+      <Filter>Code\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\starter.cpp">
+      <Filter>Code\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\xmlParser.cpp">
+      <Filter>Code\Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Code\3ds.h">
+      <Filter>Code\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\NormalRenderer.h">
+      <Filter>Code\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\pic.h">
+      <Filter>Code\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Ray.h">
+      <Filter>Code\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\RayTrace.h">
+      <Filter>Code\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Scene.h">
+      <Filter>Code\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Utils.h">
+      <Filter>Code\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\xmlParser.h">
+      <Filter>Code\Header</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="Scenes\test.xml">
+      <Filter>Scenes</Filter>
+    </Xml>
+    <Xml Include="Scenes\test_cooktorrance.xml">
+      <Filter>Scenes</Filter>
+    </Xml>
+    <Xml Include="Scenes\test_cornell.xml">
+      <Filter>Scenes</Filter>
+    </Xml>
+    <Xml Include="Scenes\test_raytracing.xml">
+      <Filter>Scenes</Filter>
+    </Xml>
+    <Xml Include="Scenes\test2.xml">
+      <Filter>Scenes</Filter>
+    </Xml>
+    <Xml Include="Scenes\test3.xml">
+      <Filter>Scenes</Filter>
+    </Xml>
+    <Xml Include="Scenes\test4.xml">
+      <Filter>Scenes</Filter>
+    </Xml>
+    <Xml Include="Scenes\test5.xml">
+      <Filter>Scenes</Filter>
+    </Xml>
+  </ItemGroup>
+</Project>

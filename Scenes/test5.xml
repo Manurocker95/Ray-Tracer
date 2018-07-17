@@ -1,0 +1,680 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Scene Description in XML -->
+<scene desc="Simple Test Scene - Triangle + Sphere. Based on test.ray by Mark Tomczak"
+	    author="Micah Davis and Manuel Rodríguez">
+  <!-- Background Color and Ambient Light Property -->
+  <background>
+    <color red="0.0" green="0.0" blue="0.0"/>
+		<ambientLight red="." green="0." blue="."/>
+  </background>
+
+  <!-- Camera Description -->
+  <!--<camera fieldOfView="45.0" nearClip="0.1" farClip="100.0">
+    <position x="0.0" y="3.0" z="5.0"/>
+    <target x="0.0" y="0.0" z="-1.0"/>
+    <up x="0.0" y="1.0" z="0.0"/>
+  </camera>
+  
+  -->
+  <camera fieldOfView="45.0" nearClip="0.1" farClip="100.0">
+    <position x="0.0" y="0.0" z="5.0"/>
+    <target x="0.0" y="0.0" z="-1.0"/>
+    <up x="0.0" y="1.0" z="0.0"/> 
+   <!-- <position x=".0" y="1.0" z="3.0"/>
+    <target x="0.0" y="1.0" z="0.0"/>
+    <up x="0.0" y="1.0" z="0.0"/>-->
+  </camera>
+
+  <!-- Light Sources Collection -->
+  <light_list>
+    <!-- Light Description, Color & Position -->
+    <light>
+      <color red="0.5" green="0.5" blue="0.5"/>
+      <position x=".0" y=".0" z="15.0"/>
+      <attenuation constant=".1" linear="0.03" quadratic="0.00"/>
+    </light>
+  </light_list>
+
+  <!-- Material Type Collection -->
+  <material_list>
+    <material name="Purple">
+      <texture filename=""/>
+      <diffuse red="0.5" green="0.0" blue="0.5"/>
+      <specular red="0.1" green="0.0" blue="0.1" shininess="2.0"/>
+      <alpha value="0.5"/>
+      <fo value="0.5"/>
+      <bias reflection="0.001" refraction="0.001"/>
+    </material>
+
+    <material name="Red">
+      <texture filename=""/>
+      <diffuse red="1.0" green="0.0" blue="0.0"/>
+      <specular red=".5" green="0.0" blue="0.0" shininess="5.0"/>
+      <transparent red="0.0" green="0.0" blue="0.0"/>
+      <reflective red="0." green="0." blue="0."/>
+      <refraction_index red="0.0" green="0.0" blue="0.0"/>
+      <alpha value="0.5"/>
+      <fo value="0.5"/>
+      <bias reflection="0.001" refraction="0.001"/>
+    </material>
+    <material name="Green">
+      <texture filename=""/>
+      <diffuse red="0.0" green="1.0" blue="0.0"/>
+      <specular red=".5" green="0.5" blue="0.5" shininess="100.0"/>
+      <transparent red="0.0" green="0.0" blue="0.0"/>
+      <reflective red="0.0" green="0.0" blue="0.0"/>
+      <refraction_index red="0.0" green="0.0" blue="0.0"/>
+      <alpha value="1"/>
+      <fo value="1"/>
+      <bias reflection="0.001" refraction="0.001"/>
+    </material>
+
+
+    <material name="White">
+      <texture filename=""/>
+      <diffuse red="1.0" green="1.0" blue="1.0"/>
+      <specular red="1.0" green="1.0" blue="1.0" shininess="1.0"/>
+      <transparent red="0.0" green="0.0" blue="0.0"/>
+      <reflective red="0.1" green="0.1" blue="0.1"/>
+      <refraction_index red="0.0" green="0.0" blue="0.0"/>
+      <alpha value="0.5"/>
+      <fo value="0.5"/>
+      <bias reflection="0.001" refraction="0.001"/>
+    </material>
+
+    <material name="Mirror">
+      <texture filename=""/>
+      <diffuse red=".0" green="0.0" blue="0.0"/>
+      <specular red="1" green="1" blue="1" shininess="100.0"/>
+      <transparent red="0.0" green="0.0" blue="0.0"/>
+      <reflective red="1.0" green="1.0" blue="1.0"/>
+      <refraction_index red="1.0" green="1.0" blue="1.0"/>
+      <alpha value="0.01"/>
+      <fo value="0.9"/>
+      <bias reflection="0.001" refraction="0.001"/>
+
+    </material>
+    <material name="Gold">
+      <texture filename=""/>
+      <diffuse red="1" green="0.79" blue="0.29"/>
+      <specular red="1" green="1" blue="1" shininess="100.0"/>
+      <transparent red="0.0" green="0.0" blue="0.0"/>
+      <reflective red="1.0" green="1.0" blue="1.0"/>
+      <refraction_index red="0.0" green="0.0" blue="0.0"/>
+      <alpha value="0.1"/>
+      <fo value="0.6"/>
+      <bias reflection="0.001" refraction="0.001"/>
+    </material>
+    <material name="WhiteGlass">
+      <texture filename=""/>
+      <diffuse red="1.0" green="1.0" blue="1.0"/>
+      <specular red="1" green="1" blue="1" shininess="5.0"/>
+      <transparent red="1.0" green="1.0" blue="1.0"/>
+      <reflective red="0.0" green="0.0" blue="0.0"/>
+      <refraction_index red="1.517" green="1.517" blue="1.517"/>
+      <alpha value="0.00001"/>
+      <fo value="0.9"/>
+      <bias reflection="0.001" refraction="0.001"/>
+    </material>
+    <material name="TransparentGlass">
+      <texture filename=""/>
+      <diffuse red="0.0" green="0.0" blue="0.0"/>
+      <specular red="1" green="1" blue="1" shininess="1000.0"/>
+      <transparent red="0.8" green="0.8" blue="0.8"/>
+      <reflective red="0.2" green="0.2" blue="0.2"/>
+      <refraction_index red="1.05" green="1.05" blue="1.05"/>
+      <alpha value="0.00001"/>
+      <fo value="0.9"/>
+      <bias reflection="0.001" refraction="0.001"/>
+
+    </material>
+    <material name="LambertBlue">
+      <texture filename=""/>
+      <diffuse red=".0" green="0.0" blue="1.0"/>
+      <specular red=".0" green="0.0" blue="0.0" shininess="0.0"/>
+      <transparent red="0.0" green="0.0" blue="0.0"/>
+      <reflective red="0.0" green="0.0" blue="0.0"/>
+      <refraction_index red="0.0" green="0.0" blue="0.0"/>
+      <alpha value="0.5"/>
+      <fo value="0.5"/>
+      <bias reflection="0.001" refraction="0.001"/>
+    </material>
+    <material name="LambertYellow">
+      <texture filename=""/>
+      <diffuse red="1.0" green="1.0" blue="0.0"/>
+      <specular red=".0" green="0.0" blue="0.0" shininess="0.0"/>
+      <transparent red="0.0" green="0.0" blue="0.0"/>
+      <reflective red="0.0" green="0.0" blue="0.0"/>
+      <refraction_index red="0.0" green="0.0" blue="0.0"/>
+      <alpha value="0.5"/>
+      <fo value="0.5"/>
+    <bias reflection="0.001" refraction="0.001"/>
+    </material>
+
+    <material name="LambertPink">
+      <texture filename=""/>
+      <diffuse red="1.0" green="0.3" blue="1.0"/>
+      <specular red=".0" green="0.0" blue="0.0" shininess="0.0"/>
+      <transparent red="0.0" green="0.0" blue="0.0"/>
+      <reflective red="0.0" green="0.0" blue="0.0"/>
+      <refraction_index red="0.0" green="0.0" blue="0.0"/>
+      <alpha value="0.5"/>
+      <fo value="0.5"/>
+      <bias reflection="0.001" refraction="0.001"/>
+    </material>
+    
+    
+    
+    <!-- NEW Materials-->
+    
+    <!-- Comun Values based on sigraph slides:http://blog.selfshadow.com/publications/s2015-shading-course/hoffman/s2015_pbs_physics_math_slides.pdf#57
+        F0  Dielectricos  water- 0.02  plastic, 0.04  gems 0.05-0.06  diamonds 0.1-0.2
+        FO semiconductors: 0.3-0.5  silicon and titanium
+        Metals:  0.5-1.022
+    -->
+    
+    <material name="LambertGreen">
+      <texture filename=""/>
+      <diffuse red="0.0" green="1.0" blue="0.0"/>
+      <specular red="0." green="0.0" blue="0.0" shininess="100.0"/>
+      <refraction_index red="1.517" green="1.517" blue="1.517"/>
+      <reflective red="0.0" green="0.0" blue="0.0"/>
+      <transparent red="0.0" green="0.0" blue="0.0"/>
+      <alpha value="0.5"/>
+      <fo value="0.5"/>
+      <bias reflection="0.001" refraction="0.001"/>
+    </material>
+    
+      <!-- Top row, varying specular in phong, and alpha (fresnel rim) in cookTorrance -->
+   <material name="LambertRed_0_0">
+      <texture filename=""/>
+      <diffuse red="1.0" green="0.0" blue="0.0"/>
+      <specular red="0." green="0.0" blue="0.0" shininess="10.0"/>
+      <refraction_index red="1.517" green="1.517" blue="1.517"/>
+      <reflective red="0.0" green="0.0" blue="0.0"/>
+      <transparent red="0.0" green="0.0" blue="0.0"/>
+     <alpha value="1"/>
+     <fo value="0.4"/>
+     <bias reflection="0.001" refraction="0.001"/>
+
+   </material>
+    <material name="Red_1_0">
+      <texture filename=""/>
+      <diffuse red="1.0" green="0.0" blue="0.0"/>
+      <specular red="0.4" green="0.4" blue="0.4" shininess="10"/>
+      <refraction_index red="1.517" green="1.517" blue="1.517"/>
+      <reflective red="0.0" green="0.0" blue="0.0"/>
+      <transparent red="0.0" green="0.0" blue="0.0"/>
+      <alpha value="0.25"/>
+      <fo value="0.4"/>
+      <bias reflection="0.001" refraction="0.001"/>
+
+    </material>
+    <material name="Red_2_0">
+      <texture filename=""/>
+      <diffuse red="1.0" green="0.0" blue="0.0"/>
+      <specular red="0.6" green="0.6" blue="0.6" shininess="10.0"/>
+      <refraction_index red="1.517" green="1.517" blue="1.517"/>
+      <reflective red="0.0" green="0.0" blue="0.0"/>
+      <transparent red="0.0" green="0.0" blue="0.0"/>
+      <alpha value="0.2"/>
+      <fo value="0.4"/>
+      <bias reflection="0.001" refraction="0.001"/>
+
+    </material>
+    <material name="Red_3_0">
+      <texture filename=""/>
+      <diffuse red="1.0" green="0.0" blue="0.0"/>
+      <specular red="0.8" green="0.8" blue="0.8" shininess="10.0"/>
+      <refraction_index red="1.517" green="1.517" blue="1.517"/>
+      <reflective red="0.0" green="0.0" blue="0.0"/>
+      <transparent red="0.0" green="0.0" blue="0.0"/>
+      <alpha value="0.18"/>
+      <fo value="0.4"/>
+      <bias reflection="0.001" refraction="0.001"/>
+
+    </material>
+    <material name="Red_4_0">
+      <texture filename=""/>
+      <diffuse red="1.0" green="0.0" blue="0.0"/>
+      <specular red="1.0" green="1.0" blue="1.0" shininess="10.0"/>
+      <refraction_index red="1.517" green="1.517" blue="1.517"/>
+      <reflective red="0.0" green="0.0" blue="0.0"/>
+      <transparent red="0.0" green="0.0" blue="0.0"/>
+      <alpha value="0.1"/>
+      <fo value="0.4"/>
+      <bias reflection="0.001" refraction="0.001"/>
+
+    </material>
+   <!-- Second row: Varying Shinyness in phong, and Fo in cook torrance-->
+    <material name="Red_0_1">
+      <texture filename=""/>
+      <diffuse red="1.0" green="0.0" blue="0.0"/>
+      <specular red="0.6" green="0.6" blue="0.6" shininess="0.1"/>
+      <refraction_index red="1.517" green="1.517" blue="1.517"/>
+      <reflective red="0.0" green="0.0" blue="0.0"/>
+      <transparent red="0.0" green="0.0" blue="0.0"/>
+      <alpha value="0.3"/>
+      <fo value="0.02"/>
+      <bias reflection="0.001" refraction="0.001"/>
+
+    </material>
+    <material name="Red_1_1">
+      <texture filename=""/>
+      <diffuse red="1.0" green="0.0" blue="0.0"/>
+      <specular red="0.6" green="0.6" blue="0.6" shininess="1.0"/>
+      <refraction_index red="1.517" green="1.517" blue="1.517"/>
+      <reflective red="0.0" green="0.0" blue="0.0"/>
+      <transparent red="0.0" green="0.0" blue="0.0"/>
+      <alpha value="0.3"/>
+      <fo value="0.1"/>
+      <bias reflection="0.001" refraction="0.001"/>
+    </material>
+    <material name="Red_2_1">
+      <texture filename=""/>
+      <diffuse red="1.0" green="0.0" blue="0.0"/>
+      <specular red="0.6" green="0.6" blue="0.6" shininess="10.0"/>
+      <refraction_index red="1.517" green="1.517" blue="1.517"/>
+      <reflective red="0.0" green="0.0" blue="0.0"/>
+      <transparent red="0.0" green="0.0" blue="0.0"/>
+      <alpha value="0.3"/>
+      <fo value="0.4"/>
+      <bias reflection="0.001" refraction="0.001"/>
+    </material>
+    <material name="Red_3_1">
+      <texture filename=""/>
+      <diffuse red="1.0" green="0.0" blue="0.0"/>
+      <specular red="0.6" green="0.6" blue="0.6" shininess="100.0"/>
+      <refraction_index red="1.517" green="1.517" blue="1.517"/>
+      <reflective red="0.0" green="0.0" blue="0.0"/>
+      <transparent red="0.0" green="0.0" blue="0.0"/>
+      <alpha value="0.3"/>
+      <fo value="0.6"/>
+      <bias reflection="0.001" refraction="0.001"/>
+    </material>
+    <material name="Red_4_1">
+      <texture filename=""/>
+      <diffuse red="1.0" green="0.0" blue="0.0"/>
+      <specular red="0.6" green="0.6" blue="0.6" shininess="1000.0"/>
+      <refraction_index red=".0" green=".0" blue=".0"/>
+      <reflective red="0.0" green=".0" blue=".0"/>
+      <transparent red="0.0" green="0.0" blue="0.0"/>
+      <alpha value="0.3"/>
+      <fo value="1.1"/>
+      <bias reflection="0.001" refraction="0.001"/>
+    </material>
+
+      <!-- third row: Varying reflectivness and F0 -->
+    
+    <material name="Red_0_2">
+      <texture filename=""/>
+      <diffuse red="1.0" green="0.0" blue="0.0"/>
+      <specular red="0.5" green="0.5" blue="0.5" shininess="100"/>
+      <refraction_index red="1.05" green="1.05" blue="1.05"/>
+      <reflective red="0.2" green="0.2" blue="0.2"/>
+      <transparent red="0.0" green="0.0" blue="0.0"/>
+      <alpha value="0.3"/>
+      <fo value="0.02"/>
+      <bias reflection="0.001" refraction="0.001"/>
+    </material>
+
+    <material name="Red_1_2">
+      <texture filename=""/>
+      <diffuse red="1.0" green="0.0" blue="0.0"/>
+      <specular red="0.5" green="0.5" blue="0.5" shininess="100"/>
+      <refraction_index red="1.05" green="1.05" blue="1.05"/>
+      <reflective red="0.4" green="0.4" blue="0.4"/>
+      <transparent red="0.0" green="0.0" blue="0.0"/>
+      <alpha value="0.3"/>
+      <fo value="0.1"/>
+      <bias reflection="0.001" refraction="0.001"/>
+    </material>
+    <material name="Red_2_2">
+      <texture filename=""/>
+      <diffuse red="1.0" green="0.0" blue="0.0"/>
+      <specular red="0.5" green="0.5" blue="0.5" shininess="100"/>
+      <refraction_index red="1.05" green="1.05" blue="1.05"/>
+      <reflective red="0.6" green="0.6" blue="0.6"/>
+      <transparent red="0.0" green="0.0" blue="0.0"/>
+      <alpha value="0.3"/>
+      <fo value="0.5"/>
+      <bias reflection="0.001" refraction="0.001"/>
+    </material>
+    <material name="Red_3_2">
+      <texture filename=""/>
+      <diffuse red="1.0" green="0.0" blue="0.0"/>
+      <specular red="0.5" green="0.5" blue="0.5" shininess="100"/>
+      <refraction_index red="1.05" green="1.05" blue="1.05"/>
+      <reflective red="0.8" green="0.8" blue="0.8"/>
+      <transparent red="0.0" green="0.0" blue="0.0"/>
+      <alpha value="0.3"/>
+      <fo value="0.8"/>
+      <bias reflection="0.001" refraction="0.001"/>
+    </material>
+    <material name="Red_4_2">
+      <texture filename=""/>
+      <diffuse red="1.0" green="0.0" blue="0.0"/>
+      <specular red="0.5" green="0.5" blue="0.5" shininess="100"/>
+      <refraction_index red="1.05" green="1.05" blue="1.05"/>
+      <reflective red="1.0" green="1.0" blue="1.0"/>
+      <transparent red="0.0" green="0.0" blue="0.0"/>
+      <alpha value="0.3"/>
+      <fo value="1.1"/>
+      <bias reflection="0.001" refraction="0.001"/>
+    </material>
+    
+    <!-- fourth row: Varying transparency , Fo=cte = crystal-->
+
+    <material name="Red_0_3">
+      <texture filename=""/>
+      <diffuse red="1.0" green="0.0" blue="0.0"/>
+      <specular red="0.5" green="0.5" blue="0.5" shininess="1000 "/>
+      <refraction_index red="1.05" green="1.05" blue="1.05"/>
+      <reflective red="0.1" green="0.1" blue="0.1"/>
+      <transparent red="0.2" green="0.2" blue="0.2"/>
+      <alpha value="0.3"/>
+      <fo value="0.06"/>  
+      <bias reflection="0.001" refraction="0.001"/>
+    </material>
+
+    <material name="Red_1_3">
+      <texture filename=""/>
+      <diffuse red="1.0" green="0.0" blue="0.0"/>
+      <specular red="0.5" green="0.5" blue="0.5" shininess="1000.0"/>
+      <refraction_index red="1.05" green="1.05" blue="1.05"/>
+      <reflective red="0.1" green="0.1" blue="0.1"/>
+      <transparent red="0.4" green="0.4" blue="0.4"/>
+      <alpha value="0.3"/>
+      <fo value="0.06"/>
+      <bias reflection="0.001" refraction="0.001"/>
+    </material>
+    <material name="Red_2_3">
+      <texture filename=""/>
+      <diffuse red="1.0" green="0.0" blue="0.0"/>
+      <specular red="0.5" green="0.5" blue="0.5" shininess="1000.0"/>
+      <refraction_index red="1.05" green="1.05" blue="1.05"/>
+      <reflective red="0.1" green="0.1" blue="0.1"/>
+      <transparent red="0.6" green="0.6" blue="0.6"/>
+      <alpha value="0.3"/>
+      <fo value="0.06"/>
+      <bias reflection="0.001" refraction="0.001"/>
+    </material>
+    <material name="Red_3_3">
+      <texture filename=""/>
+      <diffuse red="1.0" green="0.0" blue="0.0"/>
+      <specular red="0.5" green="0.5" blue="0.5" shininess="1000.0"/>
+      <refraction_index red="1.05" green="1.05" blue="1.05"/>
+      <reflective red="0.1" green="0.1" blue="0.1"/>
+      <transparent red="0.8" green="0.8" blue="0.8"/>
+      <alpha value="0.3"/>
+      <fo value="0.06"/>
+      <bias reflection="0.001" refraction="0.001"/>
+    </material>
+    <material name="Red_4_3">
+      <texture filename=""/>
+      <diffuse red="1.0" green="0.0" blue="0.0"/>
+      <specular red="0.5" green="0.5" blue="0.5" shininess="1000.0"/>
+      <refraction_index red="1.05" green="1.05" blue="1.05"/>
+      <reflective red="0.1" green="0.1" blue="0.1"/>
+      <transparent red="1.0" green="1.0" blue="1.0"/>
+      <alpha value="0.3"/>
+      <fo value="0.06"/>
+      <bias reflection="0.001" refraction="0.001"/>
+    </material>
+
+
+  </material_list>
+
+  <!-- List of Scene Objects -->
+  <object_list>
+
+
+
+
+
+<!-- Top row, varying specular-->
+    <sphere name="Sphere" material="LambertRed_0_0" radius="0.8">
+      <scale x="1" y="1" z="1"/>
+      <rotation x="0.0" y="0.0" z="0.0"/>
+      <position x="0.0" y="0.0" z="0.0"/>
+      <center x="-4.0" y="3.0" z="-6.0"/>
+    </sphere>
+     <sphere name="Sphere" material="Red_1_0" radius="0.8">
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <rotation x="0.0" y="0.0" z="0.0"/>
+      <position x="0.0" y="0.0" z="0.0"/>
+      <center x="-2.0" y="3.0" z="-6.0"/>
+    </sphere>
+     <sphere name="Sphere" material="Red_2_0" radius="0.8">
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <rotation x="0.0" y="0.0" z="0.0"/>
+      <position x="0.0" y="0.0" z="0.0"/>
+      <center x="0.0" y="3.0" z="-6.0"/>
+    </sphere>
+    <sphere name="Sphere" material="Red_3_0" radius="0.8">
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <rotation x="0.0" y="0.0" z="0.0"/>
+      <position x="0.0" y="0.0" z="0.0"/>
+      <center x="2.0" y="3.0" z="-6.0"/>
+    </sphere>
+     <sphere name="Sphere" material="Red_4_0" radius="0.8">
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <rotation x="0.0" y="0.0" z="0.0"/>
+      <position x="0.0" y="0.0" z="0.0"/>
+      <center x="4.0" y="3.0" z="-6.0"/>
+    </sphere>
+
+   <!-- Second row: Varying Shinyness-->
+ <sphere name="Sphere" material="Red_0_1" radius="0.8">
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <rotation x="0.0" y="0.0" z="0.0"/>
+      <position x="0.0" y="0.0" z="0.0"/>
+      <center x="-4.0" y="1.0" z="-6.0"/>
+    </sphere>
+     <sphere name="Sphere" material="Red_1_1" radius="0.8">
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <rotation x="0.0" y="0.0" z="0.0"/>
+      <position x="0.0" y="0.0" z="0.0"/>
+      <center x="-2.0" y="1.0" z="-6.0"/>
+    </sphere>
+     <sphere name="Sphere" material="Red_2_1" radius="0.8">
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <rotation x="0.0" y="0.0" z="0.0"/>
+      <position x="0.0" y="0.0" z="0.0"/>
+      <center x="0.0" y="1.0" z="-6.0"/>
+    </sphere>
+    <sphere name="Sphere" material="Red_3_1" radius="0.8">
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <rotation x="0.0" y="0.0" z="0.0"/>
+      <position x="0.0" y="0.0" z="0.0"/>
+      <center x="2.0" y="1.0" z="-6.0"/>
+    </sphere>
+     <sphere name="Sphere" material="Red_4_1" radius="0.8">
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <rotation x="0.0" y="0.0" z="0.0"/>
+      <position x="0.0" y="0.0" z="0.0"/>
+      <center x="4.0" y="1.0" z="-6.0"/>
+    </sphere>        
+      <!-- third row: Varying reflectivness -->
+    <sphere name="Sphere" material="Red_0_2" radius="0.8">
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <rotation x="0.0" y="0.0" z="0.0"/>
+      <position x="0.0" y="0.0" z="0.0"/>
+      <center x="-4.0" y="-1.0" z="-6.0"/>
+    </sphere>
+     <sphere name="Sphere" material="Red_1_2" radius="0.8">
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <rotation x="0.0" y="0.0" z="0.0"/>
+      <position x="0.0" y="0.0" z="0.0"/>
+      <center x="-2.0" y="-1.0" z="-6.0"/>
+    </sphere>
+     <sphere name="Sphere" material="Red_2_2" radius="0.8">
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <rotation x="0.0" y="0.0" z="0.0"/>
+      <position x="0.0" y="0.0" z="0.0"/>
+      <center x="0.0" y="-1.0" z="-6.0"/>
+    </sphere>
+    <sphere name="Sphere" material="Red_3_2" radius="0.8">
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <rotation x="0.0" y="0.0" z="0.0"/>
+      <position x="0.0" y="0.0" z="0.0"/>
+      <center x="2.0" y="-1.0" z="-6.0"/>
+    </sphere>
+     <sphere name="Sphere" material="Red_4_2" radius="0.8">
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <rotation x="0.0" y="0.0" z="0.0"/>
+      <position x="0.0" y="0.0" z="0.0"/>
+      <center x="4.0" y="-1.0" z="-6.0"/>
+    </sphere>
+    
+     <!-- fourth row: Varying transparency -->
+     <sphere name="Sphere" material="Red_0_3" radius="0.8">
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <rotation x="0.0" y="0.0" z="0.0"/>
+      <position x="0.0" y="0.0" z="0.0"/>
+      <center x="-4.0" y="-3.0" z="-6.0"/>
+    </sphere>
+     <sphere name="Sphere" material="Red_1_3" radius="0.8">
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <rotation x="0.0" y="0.0" z="0.0"/>
+      <position x="0.0" y="0.0" z="0.0"/>
+      <center x="-2.0" y="-3.0" z="-6.0"/>
+    </sphere>
+     <sphere name="Sphere" material="Red_2_3" radius="0.8">
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <rotation x="0.0" y="0.0" z="0.0"/>
+      <position x="0.0" y="0.0" z="0.0"/>
+      <center x="0.0" y="-3.0" z="-6.0"/>
+    </sphere>
+    <sphere name="Sphere" material="Red_3_3" radius="0.8">
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <rotation x="0.0" y="0.0" z="0.0"/>
+      <position x="0.0" y="0.0" z="0.0"/>
+      <center x="2.0" y="-3.0" z="-6.0"/>
+    </sphere>
+     <sphere name="Sphere" material="Red_4_3" radius="0.8">
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <rotation x="0.0" y="0.0" z="0.0"/>
+      <position x="0.0" y="0.0" z="0.0"/>
+      <center x="4.0" y="-3.0" z="-6.0"/>
+    </sphere>
+
+    <!-- floor Wall-->
+    <model filename="Assets/objects/plane.obj" name="floor"  material="White">
+      <scale x="7.0" y="7.0" z="7.0"/>
+      <rotation x=".0" y="0.0" z="0.0"/>
+      <position x=".0" y="-5.0" z="-10.0"/>
+    </model>
+    
+    <!--
+ <model filename="objects/esfe.obj" name="mono"  material="Red_4_0">
+      <scale x="1" y="1" z="1"/>
+      <rotation x="0" y="45" z=".0"/>
+      <position x="0.0" y=".0" z="-8.0"/>
+    </model>
+    -->
+    
+    
+		<!-- Model in 3DS File Format   
+    <model filename="objects/cube.obj" name="cube"  material="Purple">
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <rotation x=".78" y="0.0" z="0.0"/>
+      <position x="-2.5" y="0.0" z="0.0"/>
+    </model>
+ -->
+    <!-- Model in OBJ File Format 
+		<model filename="objects/cube.obj" name="cube"  material="Red_4_0">
+			<scale x="1.0" y="1.0" z="1.0"/>
+			<rotation x="0.0" y="0.78" z="0.0"/>
+			<position x="-1" y="0.0" z="0.0"/>
+		</model>
+   -->
+    
+    <!-- 
+    <model filename="objects/casa.obj" name="casa"  material="LambertPink">
+      <scale x="0.1" y="0.1" z="0.1"/>
+      <rotation x="0.0" y="0.0" z="0.0"/>
+      <position x="4.0" y="-3.0" z="-5.0"/>
+    </model>
+-->
+
+
+    <!--Green sphere in background
+     <sphere name="Sphere" material="LambertGreen" radius="3">
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <rotation x="0.0" y="0.0" z="0.0"/>
+      <position x="0.0" y="0.0" z="0.0"/>
+      <center x="3.0" y="-5.0" z="-10.0"/>
+    </sphere>
+    -->
+    
+
+
+    <!-- Pikachu-->
+    <!-- 
+    <model filename="objects/Pikachu.obj" name="Pikachu"  material="LambertPink">
+      <scale x="0.01" y="0.01" z="0.01"/>
+      <rotation x="0.0" y="0.0" z="0.0"/>
+      <position x="0.0" y="-1" z="0.0"/>
+    </model>
+-->
+
+    <!-- Mono
+<model filename="objects/mono.obj" name="mono"  material="LambertPink">
+  <scale x="1.0" y="1.0" z="1.0"/>
+  <rotation x="0.0" y="0.0" z="0.0"/>
+  <position x=".0" y="0.0" z="0.0"/>
+</model>
+-->
+
+
+    <!-- Sphere Object -->
+ <!--
+    <sphere name="WallLeft" material="Red" radius="10000.0">
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <rotation x="0.0" y="0.0" z="0.0"/>
+      <position x="0.0" y="0.0" z="0.0"/>
+
+      <center x="-10001.5" y="1.0" z="3.0"/>
+    </sphere>
+
+    <sphere name="WallRight" material="Green" radius="10000.0">
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <rotation x="0.0" y="0.0" z="0.0"/>
+      <position x="0.0" y="0.0" z="0.0"/>
+
+      <center x="10001.5" y="1.0" z="3.0"/>
+    </sphere>
+
+    <sphere name="WallFront" material="White" radius="10000.0">
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <rotation x="0.0" y="0.0" z="0.0"/>
+      <position x="0.0" y="0.0" z="0.0"/>
+
+      <center x="0" y="1.0" z="-10001.5"/>
+    </sphere>
+
+
+    <sphere name="Floor" material="White" radius="10000.0">
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <rotation x="0.0" y="0.0" z="0.0"/>
+      <position x="0.0" y="0.0" z="0.0"/>
+
+      <center x="0" y="-10000" z="3"/>
+    </sphere>
+
+    <sphere name="Ceil" material="White" radius="10000.0">
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <rotation x="0.0" y="0.0" z="0.0"/>
+      <position x="0.0" y="0.0" z="3.0"/>
+
+      <center x="0" y="10002" z="0"/>
+    </sphere>
+-->
+
+
+  </object_list>
+
+  <!-- End of Scene -->
+</scene>

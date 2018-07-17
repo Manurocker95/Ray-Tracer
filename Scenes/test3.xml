@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Scene Description in XML -->
+<scene desc="Simple Test Scene - Triangle + Sphere. Based on test.ray by Mark Tomczak"
+	    author="Micah Davis and Manuel Rodríguez">
+	<!-- Background Color and Ambient Light Property -->
+	<background>
+		<color red="0.0" green="0.0" blue="1.0"/>
+		<ambientLight red="0.0" green="0.0" blue="0.0"/>
+	</background>
+
+	<!-- Camera Description -->
+	<camera fieldOfView="45.0" nearClip="0.1" farClip="100.0">
+		<position x="2.0" y="2.0" z="5.0"/>
+		<target x="1.0" y="1.0" z="-1.0"/>
+		<up x="0.0" y="1.0" z="0.0"/>
+	</camera>
+
+	<!-- Light Sources Collection -->
+	<light_list>
+		<!-- Light Description, Color & Position -->
+		<light>
+			<color red="0.5" green="0.5" blue="0.5"/>
+			<position x="5.0" y="0.0" z="15.0"/>
+			<attenuation constant="0.10" linear="0.03" quadratic="0.00"/>
+		</light>
+	</light_list>
+
+	<!-- Material Type Collection -->
+	<material_list>
+		<material name="Purple">
+			<texture filename=""/>
+			<diffuse red="0.5" green="0.0" blue="0.5"/>
+			<specular red="0.1" green="0.0" blue="0.1" shininess="2.0"/>
+			<alpha value="0.5"/>
+			<fo value="0.5"/>
+    <bias reflection="0.001" refraction="0.001"/>
+		</material>
+
+		<material name="Red">
+      <texture filename=""/>
+			<diffuse red="1.0" green="0.0" blue="0.0"/>
+			<specular red=".5" green="0.0" blue="0.0" shininess="5.0"/>
+			<transparent red="0.0" green="0.0" blue="0.0"/>
+			<reflective red="0." green="0." blue="0."/>
+			<refraction_index red="0.0" green="0.0" blue="0.0"/>
+			<alpha value="0.5"/>
+			<fo value="0.5"/>
+    <bias reflection="0.001" refraction="0.001"/>
+		</material>
+    <material name="Green">
+      <texture filename=""/>
+      <diffuse red="0.0" green="1.0" blue="0.0"/>
+      <specular red=".5" green="0.5" blue="0.5" shininess="100.0"/>
+      <transparent red="0.0" green="0.0" blue="0.0"/>
+      <reflective red="0.0" green="0.0" blue="0.0"/>
+      <refraction_index red="0.0" green="0.0" blue="0.0"/>
+      <alpha value="1"/>
+      <fo value="1"/>
+    <bias reflection="0.001" refraction="0.001"/>
+    </material>
+
+
+    <material name="White">
+      <texture filename=""/>
+			<diffuse red="1.0" green="1.0" blue="1.0"/>
+			<specular red="1.0" green="1.0" blue="1.0" shininess="1.0"/>
+			<transparent red="0.0" green="0.0" blue="0.0"/>
+			<reflective red="0.1" green="0.1" blue="0.1"/>
+			<refraction_index red="0.0" green="0.0" blue="0.0"/>
+			<alpha value="0.5"/>
+			<fo value="0.5"/>
+    <bias reflection="0.001" refraction="0.001"/>
+		</material>
+
+    <material name="Mirror">
+      <texture filename=""/>
+      <diffuse red=".2" green="0.2" blue="0.2"/>
+      <specular red="1" green="1" blue="1" shininess="100.0"/>
+      <transparent red="0.0" green="0.0" blue="0.0"/>
+      <reflective red="1.0" green="1.0" blue="1.0"/>
+      <refraction_index red="0.0" green="0.0" blue="0.0"/>
+      <alpha value="0.01"/>
+      <fo value="0.9"/>
+    <bias reflection="0.001" refraction="0.001"/>
+    </material>
+    <material name="Gold">
+      <texture filename=""/>
+      <diffuse red="1" green="0.79" blue="0.29"/>
+      <specular red="1" green="1" blue="1" shininess="100.0"/>
+      <transparent red="0.0" green="0.0" blue="0.0"/>
+      <reflective red="1.0" green="1.0" blue="1.0"/>
+      <refraction_index red="0.0" green="0.0" blue="0.0"/>
+      <alpha value="0.1"/>
+      <fo value="0.6"/>
+    <bias reflection="0.001" refraction="0.001"/>
+    </material>
+    <material name="WhiteGlass">
+      <texture filename=""/>
+      <diffuse red="1.0" green="1.0" blue="1.0"/>
+      <specular red="1" green="1" blue="1" shininess="5.0"/>
+      <transparent red="1.0" green="1.0" blue="1.0"/>
+      <reflective red="0.0" green="0.0" blue="0.0"/>
+      <refraction_index red="1.517" green="1.517" blue="1.517"/>
+      <alpha value="0.00001"/>
+      <fo value="0.9"/>
+    <bias reflection="0.001" refraction="0.001"/>
+    </material>
+    <material name="TransparentGlass">
+      <texture filename=""/>
+      <diffuse red="0.0" green="0.0" blue="0.0"/>
+      <specular red="1" green="1" blue="1" shininess="5.0"/>
+      <!--<transparent red="1.0" green="1.0" blue="1.0"/>
+      <reflective red="1.0" green="1.0" blue="1.0"/>-->
+      <transparent red="0.9" green="0.9" blue="0.9"/>
+      <reflective red="0.1" green="0.1" blue="0.1"/>
+      <refraction_index red="1.517" green="1.517" blue="1.517"/>
+      <alpha value="0.00001"/>
+      <fo value="0.9"/>
+    <bias reflection="0.001" refraction="0.001"/>
+    </material>
+    <material name="LambertBlue">
+      <texture filename=""/>
+      <diffuse red=".0" green="0.0" blue="1.0"/>
+      <specular red=".0" green="0.0" blue="0.0" shininess="0.0"/>
+      <transparent red="0.0" green="0.0" blue="0.0"/>
+      <reflective red="0.0" green="0.0" blue="0.0"/>
+      <refraction_index red="0.0" green="0.0" blue="0.0"/>
+      <alpha value="0.5"/>
+      <fo value="0.5"/>
+    <bias reflection="0.001" refraction="0.001"/>
+    </material>
+      <material name="LambertYellow">
+      <texture filename=""/>
+      <diffuse red="1.0" green="1.0" blue="0.0"/>
+      <specular red=".0" green="0.0" blue="0.0" shininess="0.0"/>
+      <transparent red="0.0" green="0.0" blue="0.0"/>
+      <reflective red="0.0" green="0.0" blue="0.0"/>
+      <refraction_index red="0.0" green="0.0" blue="0.0"/>
+      <alpha value="0.5"/>
+      <fo value="0.5"/>
+    <bias reflection="0.001" refraction="0.001"/>
+    </material>
+
+    <material name="LambertPink">
+      <texture filename=""/>
+      <diffuse red="1.0" green="0.3" blue="1.0"/>
+      <specular red=".0" green="0.0" blue="0.0" shininess="0.0"/>
+      <transparent red="0.0" green="0.0" blue="0.0"/>
+      <reflective red="0.0" green="0.0" blue="0.0"/>
+      <refraction_index red="0.0" green="0.0" blue="0.0"/>
+      <alpha value="0.5"/>
+      <fo value="0.5"/>
+    <bias reflection="0.001" refraction="0.001"/>
+    </material>
+	</material_list>
+
+	<!-- List of Scene Objects -->
+	<object_list>
+	
+
+
+    <!-- Model in 3DS File Format -->
+    <model filename="Assets/objects/cube.obj" name="cube"  material="LambertPink">
+      <scale x="2.0" y="2.0" z="2.0"/>
+      <rotation x="0.0" y="0.78" z="0.0"/>
+      <position x="1.0" y="0.0" z="0.0"/>
+    </model>
+
+    <model filename="Assets/objects/blenderCube.obj" name="MyCube"  material="LambertPink">
+      <scale x="1" y="1" z="1"/>
+      <rotation x="0.0" y="0.78" z="0.0"/>
+      <position x="0.0" y="0.0" z="-4.0"/>
+    </model>
+
+    <model filename="Assets/objects/pikachu.obj" name="MyCube"  material="LambertPink">
+      <scale x="0.02" y="0.02" z="0.02"/>
+      <rotation x="0" y="0" z="0"/>
+      <position x="-3" y=".0" z="-4.0"/>
+    </model>
+
+  </object_list>
+	
+<!-- End of Scene -->
+</scene>
